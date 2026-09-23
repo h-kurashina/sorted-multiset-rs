@@ -111,14 +111,16 @@ nth・index・count は予想どおり 8〜21ns 遅くなるが、insert と pop
 | M1 骨格 | 完了 |
 | M2 全API | 完了。差分テスト（10^6 操作 × 3シード × 4パターン）と不変条件検査で違反ゼロ |
 | M3 計測 | 完了。上のベンチマークとプロファイル |
-| M4 実戦 | 提出コードを用意（[`examples/abc241_d.rs`](examples/abc241_d.rs)、サンプル一致、rustc 1.89.0 でコンパイル確認済み）。AtCoder への提出と AC の確認は未実施 |
+| M4 実戦 | 完了。ABC241 D「Sequence Query」（[`examples/abc241_d.rs`](examples/abc241_d.rs)）を Rust (rustc 1.89.0) で提出し、[AC](https://atcoder.jp/contests/abc241/submissions/79447594)（全29ケース、実行時間 35ms、メモリ 10412KiB） |
+
+要件定義書の完成の定義（3章の全 API が差分テストを通り、4章の性能目標を満たし、AtCoder の実問題で1問以上 AC）をすべて満たした。
 
 未決事項:
 
 - [x] AtCoder の rustc バージョン: [公式の言語一覧（2025/10 ジャッジ更新）](https://img.atcoder.jp/file/language-update/2025-10/language-list.html)で「Rust (rustc 1.89.0)」を確認した
 - [x] 検索 API の命名: `lt`/`le`/`gt`/`ge` のみで確定。`lower_bound`/`upper_bound` は取り違えやすく、別名は API と貼り付けの行数を増やすだけなので用意しない
 - [x] Python 版の定数: [tatyam-prime/SortedSet](https://github.com/tatyam-prime/SortedSet) の最新（コミット `9a205c6`）で `BUCKET_RATIO = 16`, `SPLIT_RATIO = 24`。Rust 版では上のとおり調整した
-- [x] 実戦で提出する過去問: ABC241 D「Sequence Query」を用意した
+- [x] 実戦で提出する過去問: ABC241 D「Sequence Query」で AC
 
 ## ライセンス
 
