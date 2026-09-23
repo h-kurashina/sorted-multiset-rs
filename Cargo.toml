@@ -1,0 +1,16 @@
+[package]
+name = "sorted-multiset-for-rust"
+version = "0.1.0"
+edition = "2021"
+description = "A sqrt-decomposition SortedMultiset for competitive programming, paste-able as a single module."
+license = "CC0-1.0"
+publish = false
+
+[dependencies]
+
+# テスト用: release 相当の最適化のまま overflow-checks を有効にする。
+#   cargo test --profile release-checked
+[profile.release-checked]
+inherits = "release"
+overflow-checks = true
+debug-assertions = true
